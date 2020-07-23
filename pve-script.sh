@@ -14,10 +14,10 @@ echo "deb http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/ap
 apt-get update && apt-get -y install curl gnupg apt-transport-https software-properties-common &&
 
 echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" >> /etc/apt/sources.list &&
-echo “deb [arch=amd64] https://download.docker.com/linux/debian buster stable” >> /etc/apt/sources.list &&
+echo "deb https://download.docker.com/linux/debian buster stable" >> /etc/apt/sources.list &&
 
 wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg &&
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - &&
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - &&
 
 apt update && apt -y dist-upgrade && 
 
